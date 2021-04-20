@@ -15,7 +15,7 @@ const raisedToTheThird = (arr) => {
 
   });
   return newArr;
-}
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -25,8 +25,10 @@ Write a function that appends ' The end.' to a string, and returns the modified 
 ------------------------------------------------------------------------------------------------ */
 
 const appendTheEnd = (str) => {
-  // Solution code here...
+  const a = str;
+  return a +' The end.';
 };
+console.log(appendTheEnd('lol'));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
