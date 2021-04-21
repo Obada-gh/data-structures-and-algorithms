@@ -3,18 +3,18 @@
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1 - Review
 
-Write a function named addAnimal that takes in array of animals (strings) and some callback function. 
+Write a function named addAnimal that takes in array of animals (strings) and some callback function.
 
 This function should first create a new array. Then iterate over the input array and modify each value based on the callback function provided.
 
-Push each updated animal string into the new array. Return the new array. 
+Push each updated animal string into the new array. Return the new array.
 
 HINT: Look at the tests to see how the callback functions are used.
 
 ------------------------------------------------------------------------------------------------ */
 
 function upper(str) {
-  return str.toUpperCase(); 
+  return str.toUpperCase();
 }
 
 function lower(str) {
@@ -22,7 +22,9 @@ function lower(str) {
 }
 
 const updateAnimal = (arr, callback) => {
-  // Solution code here...
+  let newArr = [];
+  arr.forEach(element => newArr.push(callback(element)));
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -34,19 +36,21 @@ For example: 'Cat' would come before 'apple'
 ------------------------------------------------------------------------------------------------ */
 
 const sortNames = (arr) => {
-  // Solution code here...
+  let newArr = arr.toUpperCase();
+  newArr.sort();
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
-Write a function called sortNumbers that takes an array of numbers and sorts them from smallest to largest. 
+Write a function called sortNumbers that takes an array of numbers and sorts them from smallest to largest.
 
-HINT: Beware... JS default is "Lexical" ordering. 
+HINT: Beware... JS default is "Lexical" ordering.
 ------------------------------------------------------------------------------------------------ */
 
 const sortNumbers = (arr) => {
-  // Solution code here...
+
+  return arr.sort(function(a, b){return a-b;});
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -54,11 +58,11 @@ CHALLENGE 4
 
 Write a function named sortBackwards that takes in an array of numbers and returns the same array, with the numbers sorted, largest to smallest.
 
-HINT: Do it with a custom sort callback, not with using `.reverse()`. ;) 
+HINT: Do it with a custom sort callback, not with using `.reverse()`. ;)
 ------------------------------------------------------------------------------------------------ */
 
 const sortBackwards = (arr) => {
-  // Solution code here...
+  return arr.sort(function(a, b){return b-a;});
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -72,7 +76,7 @@ For example, ['Alphabet', 'Zebra', 'alphabet', 'carrot'] is correctly sorted.
 ------------------------------------------------------------------------------------------------ */
 
 const alphabetize = (arr) => {
-  // Solution code here...
+  return arr.sort();
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -89,7 +93,7 @@ Here is an example of the input:
 ------------------------------------------------------------------------------------------------ */
 
 const sortByPrice = (arr) => {
-  // Solution code here...
+  return arr.sort(function(a, b){return a.price - b.price;});
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -101,7 +105,8 @@ For example, ['Alphabet', 'alphabet', 'carrot', 'Zebra'] is correctly sorted, an
 ------------------------------------------------------------------------------------------------ */
 
 const alphabetizeBetter = (arr) => {
-  // Solution code here...
+  var words = arr.map(v => v.toLowerCase());
+  return words.sort();
 };
 
 /* ------------------------------------------------------------------------------------------------

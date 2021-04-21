@@ -70,7 +70,9 @@ const greeting = (word) => {
 
 const speaker = (words, callback) => {
   let newArray = [];
-  words.forEach((word)=>{newArray.push(callback(word))})
+  words.forEach((obada)=>{
+    newArray.push(callback(obada));
+  });
   return newArray;
 };
 
@@ -95,8 +97,13 @@ const addValues = (arr, value) => {
 };
 
 const addNumbers = (num, arr, times, callback) => {
-  // Solution code here...
+  var i;
+  for (i = 0; i < times; i++) {
+    callback(arr,num);
+  }
+  return arr;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 
@@ -117,7 +124,9 @@ This function should use forEach to populate your grocery list based on the stor
 ------------------------------------------------------------------------------------------------ */
 
 const createList = (availableItems) => {
-  // Solution code here...
+  let newArr = [];
+  availableItems.forEach(element => {if(element.available===true){newArr.push(element.name);}});
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -176,7 +185,7 @@ describe('Testing challenge 4', () => {
 describe('Testing challenge 5', () => {
   test('It should add the number 8 to the array five times', () => {
     expect(addNumbers(8, [], 5, addValues)).toStrictEqual([8, 8, 8, 8, 8]);
-    expect(addNumbers(8, [], 5, addValues).length).toStrictEqual(5);
+    expect(addNumbers(8, [], 5, addValues).leng5th).toStrictEqual();
   });
 });
 
