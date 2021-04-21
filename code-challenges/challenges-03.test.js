@@ -23,7 +23,7 @@ function lower(str) {
 
 const updateAnimal = (arr, callback) => {
   let newArr = [];
-  arr.forEach(newArr.push(callback));
+  arr.forEach(element => newArr.push(callback(element)));
   return newArr;
 };
 
@@ -49,7 +49,8 @@ HINT: Beware... JS default is "Lexical" ordering.
 ------------------------------------------------------------------------------------------------ */
 
 const sortNumbers = (arr) => {
-  // Solution code here...
+
+  return arr.sort(function(a, b){return a-b;});
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -61,7 +62,7 @@ HINT: Do it with a custom sort callback, not with using `.reverse()`. ;)
 ------------------------------------------------------------------------------------------------ */
 
 const sortBackwards = (arr) => {
-  // Solution code here...
+  return arr.sort(function(a, b){return b-a;});
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -75,7 +76,7 @@ For example, ['Alphabet', 'Zebra', 'alphabet', 'carrot'] is correctly sorted.
 ------------------------------------------------------------------------------------------------ */
 
 const alphabetize = (arr) => {
-  // Solution code here...
+  return arr.sort();
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -92,7 +93,7 @@ Here is an example of the input:
 ------------------------------------------------------------------------------------------------ */
 
 const sortByPrice = (arr) => {
-  // Solution code here...
+  return arr.sort(function(a, b){return a.price - b.price;});
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -104,7 +105,8 @@ For example, ['Alphabet', 'alphabet', 'carrot', 'Zebra'] is correctly sorted, an
 ------------------------------------------------------------------------------------------------ */
 
 const alphabetizeBetter = (arr) => {
-  // Solution code here...
+  var words = arr.map(v => v.toLowerCase());
+  return words.sort();
 };
 
 /* ------------------------------------------------------------------------------------------------
