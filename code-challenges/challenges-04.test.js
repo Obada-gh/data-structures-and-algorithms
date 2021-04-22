@@ -74,7 +74,7 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 ------------------------------------------------------------------------------------------------ */
 
 const citiesAtoJ = (arr) => {
-  return arr.match(/(\b[A-Z][a-z]+|\b[A-Z]\b)/g);
+  return arr.match(/(\b[A-J][a-j]+|\b[A-J]\b)/g) !==null?arr.match(/(\b[A-J][a-j]+|\b[A-J]\b)/g) :[];
 };
 
 /* ------------------------------------------------------------------------------------------------
