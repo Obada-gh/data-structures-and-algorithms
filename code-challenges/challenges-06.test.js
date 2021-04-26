@@ -71,7 +71,10 @@ const courseInfo = { name: 'Code 301', duration: { dayTrack: '4 weeks', eveningT
 };
 
 const getCourseKeys = (obj) => {
-  // Solution code here...
+  let objArr = Object.keys(obj);
+
+  return objArr;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -83,20 +86,27 @@ Write a function named checkValues that takes in an object and a value and retur
 ------------------------------------------------------------------------------------------------ */
 
 const checkValues = (obj, value) => {
-  // Solution code here...
+  let objArr = Object.values(obj);
+  objArr.array.forEach(element => {
+    if (element.includes(value)){
+      return true;
+    }
+
+  });
+
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
-You are given an object with names and their coresponding phone numbers that looks like this: 
+You are given an object with names and their coresponding phone numbers that looks like this:
 {
   'Grace Hopper': '222-303-5938',
   'Ada Lovelace': '222-349-9842',
   'Alan Turing': '222-853-5933'
 }
 
-HR has asked you to change the data to make it easier to print so that it looks like this: 
+HR has asked you to change the data to make it easier to print so that it looks like this:
 [
   'Grace Hopper: 222-303-5938',
   'Ada Lovelace: 222-349-9842',
@@ -106,7 +116,13 @@ HR has asked you to change the data to make it easier to print so that it looks 
 ------------------------------------------------------------------------------------------------ */
 
 const updateNumbers = (obj) => {
-  // Solution code here...
+  let newArr = [];
+  let keys = Object.keys(obj);
+  let values = Object.values(obj);
+  keys.forEach((item,i)=>{
+    newArr.push(`${keys[i]}: ${values[i]}`);
+  });
+  return newArr;
 };
 
 
@@ -119,7 +135,10 @@ Write a function named getHouses that returns a new array containing the names o
 
 const getHouses = (arr) => {
   let houses = [];
-  // Solution code here...
+  let value = Object.values(characters);
+  value.forEach((item)=>{
+    houses.push(item.house);
+  });
   return houses;
 };
 
@@ -242,7 +261,7 @@ describe('Testing challenge 4', () => {
       'Grace Hopper': '222-303-5938',
       'Ada Lovelace': '222-349-9842',
       'Alan Turing': '222-853-5933'
-    }
+    };
 
     expect(updateNumbers(startingObj).includes('Grace Hopper: 222-303-5938')).toBe(true);
   });
