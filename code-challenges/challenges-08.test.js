@@ -20,7 +20,12 @@ For example, typeNum([1, 'bob' ,3]) returns [1,3].
 ------------------------------------------------------------------------------------------------ */
 
 const typeNum = (arr) => {
-  // Solution code here...
+  let numbers = arr.filter(function(n,i){
+    if(typeof(n)==='number'){
+      return n;
+    }
+  });
+  return numbers;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -32,7 +37,14 @@ For example, containsAnd(['panda', 'ran', 'and']) returns ['panda', 'and'].
 ------------------------------------------------------------------------------------------------ */
 
 const containsAnd = (arr) => {
-  // Solution code here...
+  let numbers = arr.filter(function(n,i){
+    if(n.match(/and/g)===null){
+      return false;
+    }else{
+      return true;
+    }
+  });
+  return numbers;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -44,7 +56,10 @@ For example, oddValues([1,2,3]) returns [1,3].
 ------------------------------------------------------------------------------------------------ */
 
 const oddValues = (arr) => {
-  // Solution code here...
+  let odds = arr.filter( function(n,i) {
+    return (n % 2);
+  });
+  return odds;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -59,7 +74,14 @@ For example, filterStringsWithVowels('gregor','hound','xyz') returns ['gregor', 
 
 
 const filterStringsWithVowels = (arr) => {
-  // Solution code here...
+  let numbers = arr.filter(function(n,i){
+    if(n.match(/[a,e,i,u,o]/g)===null){
+      return false;
+    }else{
+      return true;
+    }
+  });
+  return numbers;
 };
 
 
@@ -72,7 +94,14 @@ For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 ------------------------------------------------------------------------------------------------ */
 
 const notInFirstArray = (forbiddenValues, arr) => {
-  // Solution code here...
+  let newArray = arr.filter(function(n,i){
+    if(forbiddenValues.includes(n)){
+      return false;
+    }else{
+      return true;
+    }
+  });
+  return newArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
