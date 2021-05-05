@@ -68,9 +68,16 @@ Write a function named standardizePhoneNumbers that takes in an array of phone n
 For example, (123) 456-7890 returns 1234567890
 ------------------------------------------------------------------------------------------------ */
 
+
+
 const standardizePhoneNumbers = (arr) => {
-  // Solution code here...
+  let a= arr.map(item=>{
+    return item.substring(1, 4) + item.substring(6, 9) + item.substring(10, 14);
+  });
+  return a;
+
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -154,6 +161,7 @@ For example, ['Tuesday', 'Monday', 'Wednesday and Thursday', 'Tuesday 2', 'Thurs
 const daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
 const sortByDay = (arr) => {
+
   // Solution code here...
 };
 
