@@ -3,7 +3,7 @@
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1 - Review
 
-Write a function named replaceZeros that, given a string, uses Regex to replace all '0' with the word 'zero'. 
+Write a function named replaceZeros that, given a string, uses Regex to replace all '0' with the word 'zero'.
 ------------------------------------------------------------------------------------------------ */
 
 const replaceZeros = (string) => {
@@ -32,11 +32,8 @@ If the word is between 5 and 10 characters long, return true. Otherwise, return 
 ------------------------------------------------------------------------------------------------ */
 
 const validateWord = (word) => {
-  if (word =~ /^[A-Z]{5,10}$/) {
-    return true;
-} else {
-    return false;
-}
+  let regx = /^[a-zA-Z]{5,10}$/g;
+  return regx.test(word);
 };
 
 /* ------------------------------------------------------------------------------------------------
